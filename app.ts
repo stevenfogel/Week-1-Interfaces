@@ -9,7 +9,7 @@ namespace app {
 
   function displayVehicles(){
     let elemString = '';
-    vehicles.forEach((v) => {
+    vehicles.forEach((v, index) => {
       elemString += `
       <tr>
         <td>${v.make}</td>
@@ -18,13 +18,19 @@ namespace app {
         <td>${v.numDoors}</td>
         <td>${v.numSeats}</td>
         <td>N/A</td>
+        <td class="hcenter"> <button class="btn btn-danger" onclick="app.deleteVehicle(${index})">Delete</button> </td>
       </tr>
       `
     });
     $('#vehicle-display').html(elemString);
     //document.getElementById('vehicle-display').innerHTML = elemString;
-
   }
+
+export function deleteVehicle(index: number) {
+  vehicles.splice(index, 1);
+  displayVehicles();
+}
+
   export function startVehicleCreate () {
     $('#create-header').html(`
       <span>Choose a vehicle type: </span>
@@ -78,7 +84,8 @@ namespace app {
     </div>
         `)
     } else if(type === 'Truck') {
-
+      // TODO: add create truck form
+      // TODO: add createTruck() method
     }
 
   }
