@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://bootswatch.com/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="site.css">
+  </head>
+  <body>
+    <div class="well container hcenter" id="create-header">
+    <a onclick="app.startVehicleCreate()">Add a Vehicle</a>
+    </div>
+    <br>
+    <div class="well container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Number of Doors</th>
+            <th>Number of Seats</th>
+            <th id="unique-property">Unique</th>
+          </tr>
+        </thead>
+        <tbody id="vehicle-display">
+        </tbody>
+      </table>
+    </div>
+
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="models.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html>
